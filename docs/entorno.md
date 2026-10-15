@@ -5,7 +5,7 @@ Build a hands-on DevOps lab to practice Linux,
 networking, automation, containers and CI/CD.
 
 ## Environment
-- Hypervisor: VirtualBox
+- Hypervisor: VMWare
 - Operating System: Ubuntu Server
 - Network mode: NAT
 
