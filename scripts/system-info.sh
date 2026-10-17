@@ -27,6 +27,17 @@ echo "5. DISK USAGE"
 df -h /
 
 echo
+echo "5.1. DISK SPACE CHECK"
+
+disk_usage=$(df / | awk 'NR==2 {gsub("%","",$5); print $5}')
+
+if [ "$disk_usage" -ge 80 ]; then
+    echo "WARNING: Disk usage is ${disk_usage}%"
+else
+    echo "OK: Disk usage is ${disk_usage}%"
+fi
+
+echo
 echo "6. CPU COUNT"
 nproc
 
