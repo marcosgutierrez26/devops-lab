@@ -40,3 +40,16 @@ Check the script syntax before running it:
 ```bash
 bash -n scripts/system-info.sh
 ```
+
+## Project Goals
+
+- Develop Linux administration skills
+- Automate tasks with Bash
+- Learn networking fundamentals
+- Practice Docker and CI/CD
+- Build practical DevOps projects
+
+## Current Status
+
+The project is currently focused on Linux fundamentals
+and Bash scripting.
