@@ -10,9 +10,22 @@ Hands-on DevOps learning lab covering Linux, networking, Docker, CI/CD, Terrafor
 
 ## Scripts
 
+### Filesystem Explorer
+The `scripts/filesystem-explorer.sh` script displays the current directory, lists its contents, and counts files and directories
+
+### Usage
+Run the script from the directory you want to inspect:
+
+```bash
+~/devops-lab/scripts/filesystem-explorer.sh
+
 ### System Information
 
 The `scripts/system-info.sh` script collects basic information about the Ubuntu Server environment.
+
+```bash
+~/devops-lab/scripts/filesystem-explorer.sh
+````
 
 It reports:
 
@@ -23,6 +36,7 @@ It reports:
 - Number of available CPUs
 - Internet connectivity
 - DNS resolution
+- Disk usage warning when usage reaches 80%
 
 ### Usage
 
@@ -38,7 +52,7 @@ chmod +x scripts/system-info.sh
 Check the script syntax before running it:
 
 ```bash
-bash -n scripts/system-info.sh
+bash -n scripts/script_name.sh
 ```
 
 ## Project Goals
@@ -53,3 +67,9 @@ bash -n scripts/system-info.sh
 
 The project is currently focused on Linux fundamentals
 and Bash scripting.
+
+
+- **Day 1 — Environment Setup:** Configured Ubuntu Server in VMware and connected the repository to GitHub.
+- **Day 2 — System Information Script:** Created a Bash script to report basic system information.
+- **Day 3 — Disk Usage Monitoring:** Added a warning when root filesystem usage reaches 80%.
+- **Day 4 — Linux Commands and Bash Automation:** Practiced filesystem commands and built a Bash script to explore directories and count files and folders.
