@@ -10,22 +10,29 @@ Hands-on DevOps learning lab covering Linux, networking, Docker, CI/CD, Terrafor
 
 ## Scripts
 
-### Filesystem Explorer
-The `scripts/filesystem-explorer.sh` script displays the current directory, lists its contents, and counts files and directories
+# Filesystem Explorer
 
-### Usage
+The `scripts/filesystem-explorer.sh` script displays the current directory, lists its contents, and counts files and directories.
+
+## Usage
+
 Run the script from the directory you want to inspect:
 
 ```bash
 ~/devops-lab/scripts/filesystem-explorer.sh
+```
 
-### System Information
+---
+
+# System Information
 
 The `scripts/system-info.sh` script collects basic information about the Ubuntu Server environment.
 
+## Usage
+
 ```bash
-~/devops-lab/scripts/filesystem-explorer.sh
-````
+~/devops-lab/scripts/system-info.sh
+```
 
 It reports:
 
