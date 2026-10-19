@@ -1,82 +1,86 @@
-# devops-lab
+# 🚀 DevOps Lab
 
-Hands-on DevOps learning lab covering Linux, networking, Docker, CI/CD, Terraform, Ansible and Kubernetes.
+**A hands-on laboratory to learn, build, automate, and document DevOps practices.**
 
-## Infrastructure
+This repository documents my practical journey into DevOps, starting with Linux administration and Bash scripting and progressing towards containers, CI/CD, Infrastructure as Code, cloud platforms, and Kubernetes.
 
-- **Hypervisor:** VMware
-- **Operating System:** Ubuntu Server
-- **Network mode:** NAT
+## 🎯 Project Goals
 
-## Scripts
+- Strengthen Linux administration and networking fundamentals.
+- Automate repetitive tasks with Bash and Python.
+- Build and manage containerized applications with Docker.
+- Implement CI/CD pipelines.
+- Practice Infrastructure as Code using Terraform.
+- Automate configuration management with Ansible.
+- Deploy and manage workloads with Kubernetes.
+- Learn monitoring, logging, and troubleshooting.
 
-# Filesystem Explorer
+## 🖥️ Infrastructure
 
-The `scripts/filesystem-explorer.sh` script displays the current directory, lists its contents, and counts files and directories.
+| Component | Details |
+|---|---|
+| Host OS | Windows |
+| Hypervisor | VMware |
+| Server OS | Ubuntu Server |
+| Network Mode | NAT |
+| Remote Access | SSH |
+| Version Control | Git and GitHub |
 
-## Usage
+## 🛠️ Technologies
 
-Run the script from the directory you want to inspect:
+**Current focus:** Linux, Bash, networking, and Git.
 
-```bash
-~/devops-lab/scripts/filesystem-explorer.sh
-```
+**Planned learning path:** Python, Docker, CI/CD, Ansible, Terraform, cloud platforms, Kubernetes, monitoring, and logging.
 
----
+## 📂 Repository Structure
 
-# System Information
+    devops-lab/
+    ├── README.md
+    ├── docs/
+    │   ├── entorno.md
+    │   └── scripts.md
+    └── scripts/
+        ├── system-info.sh
+        ├── filesystem-explorer.sh
+        └── resource-report.sh
 
-The `scripts/system-info.sh` script collects basic information about the Ubuntu Server environment.
+## 📜 Scripts
 
-## Usage
+ `system-info.sh` | Displays system information and performs basic connectivity checks. |
+ `filesystem-explorer.sh` | Explores directory contents and counts files and directories. |
+ `resource-report.sh` | Reports system uptime, memory usage, and top CPU-consuming processes. |
 
-```bash
-~/devops-lab/scripts/system-info.sh
-```
+For detailed descriptions, usage instructions, and syntax validation, see the [Scripts Documentation](docs/scripts.md).
 
-It reports:
+## 📈 Learning Roadmap
 
-- Hostname and operating system
-- System uptime
-- Memory usage
-- Root filesystem disk usage
-- Number of available CPUs
-- Internet connectivity
-- DNS resolution
-- Disk usage warning when usage reaches 80%
+- [x] Set up the Ubuntu Server lab environment.
+- [x] Configure SSH access and connect the repository to GitHub.
+- [x] Create Bash scripts for system information and filesystem exploration.
+- [x] Create a resource report for monitoring processes and memory.
+- [ ] Strengthen Linux and networking fundamentals.
+- [ ] Develop Python automation scripts.
+- [ ] Containerize applications with Docker.
+- [ ] Build CI/CD pipelines.
+- [ ] Automate infrastructure and configuration.
+- [ ] Explore cloud platforms and Kubernetes.
+- [ ] Implement monitoring and logging.
 
-### Usage
+## 📌 Current Status
 
-Run the script from the repository root:
-
-```bash
-chmod +x scripts/system-info.sh
-./scripts/system-info.sh
-```
-
-### Validation
-
-Check the script syntax before running it:
-
-```bash
-bash -n scripts/script_name.sh
-```
-
-## Project Goals
-
-- Develop Linux administration skills
-- Automate tasks with Bash
-- Learn networking fundamentals
-- Practice Docker and CI/CD
-- Build practical DevOps projects
-
-## Current Status
-
-The project is currently focused on Linux fundamentals
-and Bash scripting.
-
+The project is currently focused on Linux fundamentals and Bash scripting.
 
 - **Day 1 — Environment Setup:** Configured Ubuntu Server in VMware and connected the repository to GitHub.
 - **Day 2 — System Information Script:** Created a Bash script to report basic system information.
 - **Day 3 — Disk Usage Monitoring:** Added a warning when root filesystem usage reaches 80%.
 - **Day 4 — Linux Commands and Bash Automation:** Practiced filesystem commands and built a Bash script to explore directories and count files and folders.
+- **Day 5 — Process and Resource Monitoring:** Practiced Linux process management and resource monitoring commands. Created a Bash script to report system uptime, memory usage, and the top five CPU-consuming processes. Documented all three scripts in `docs/scripts.md` and improved the project README.
+
+## 📚 Documentation
+
+- [Lab Environment](docs/entorno.md)
+- [Scripts Documentation](docs/scripts.md)
+
+---
+
+*This repository is an ongoing practical learning project focused on building real-world DevOps skills through hands-on implementation and documentation.*
