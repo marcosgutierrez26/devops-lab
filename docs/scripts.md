@@ -100,3 +100,37 @@ Check the Bash syntax without executing the script:
 - Scripts should be executed from the root directory of the repository using their relative paths.
 - The `bash -n` command checks syntax without executing the script.
 - These scripts support practical learning in Linux administration, system information gathering, filesystem exploration, resource monitoring, and automation.
+
+## 4. Python System Report
+
+**File:** `scripts/system_report.py`
+
+### Purpose
+
+Generates a system report using Python's built-in modules and Linux system information.
+
+### Features
+
+- Displays the hostname and operating system.
+- Shows the operating system release and Python version.
+- Includes the date and time when the report is generated.
+- Reads `/proc/meminfo` to calculate RAM usage.
+- Reports total, used, and available memory.
+- Uses the `shutil` module to calculate total, used, and free disk space.
+- Displays memory and disk usage percentages.
+
+### Usage
+
+Run the script from the root directory of the repository:
+
+    python3 scripts/system_report.py
+
+### Validation
+
+Check the Python syntax without executing the script:
+
+    python3 -m py_compile scripts/system_report.py
+
+### Dependencies
+
+The script uses Python's standard library and Linux system information. No external Python packages are required.
