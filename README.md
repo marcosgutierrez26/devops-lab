@@ -15,7 +15,7 @@ This repository documents my practical journey into DevOps, starting with Linux 
 - Deploy and manage workloads with Kubernetes
 - Learn monitoring, logging, and troubleshooting
 
-##Infrastructure
+## Infrastructure
 
 | Component | Details |
 |---|---|
@@ -26,7 +26,7 @@ This repository documents my practical journey into DevOps, starting with Linux 
 | Remote Access | SSH |
 | Version Control | Git and GitHub |
 
-##Technologies
+## Technologies
 
 **Current focus:** Linux, Bash, networking, and Git
 
