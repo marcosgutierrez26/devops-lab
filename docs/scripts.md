@@ -118,6 +118,8 @@ Generates a system report using Python's built-in modules and Linux system infor
 - Reports total, used, and available memory.
 - Uses the `shutil` module to calculate total, used, and free disk space.
 - Displays memory and disk usage percentages.
+- Classifies RAM and disk usage as `normal`, `WARNING` (80% or more), or `CRITICAL` (90% or more) with the `clasificar()` function.
+- Shows the usage level next to each percentage.
 
 ### Usage
 

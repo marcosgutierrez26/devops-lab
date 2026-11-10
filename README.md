@@ -73,7 +73,7 @@ For detailed descriptions, usage instructions, and syntax validation, see the [S
 
 ## Current Status
 
-The project is currently focused on Linux fundamentals and Bash scripting
+The project is currently focused on Linux fundamentals and Bash/Python scripting
 
 - **Day 1 — Environment Setup:** Configured Ubuntu Server in VMware and connected the repository to GitHub
 - **Day 2 — System Information Script:** Created a Bash script to report basic system information
@@ -81,6 +81,7 @@ The project is currently focused on Linux fundamentals and Bash scripting
 - **Day 4 — Linux Commands and Bash Automation:** Practiced filesystem commands and built a Bash script to explore directories and count files and folders
 - **Day 5 — Process and Resource Monitoring:** Practiced Linux process management and resource monitoring commands. Created a Bash script to report system uptime, memory usage, and the top five CPU-consuming processes. Documented all three scripts in `docs/scripts.md` and improved the project README
 - **Day 6 — Python System Monitoring:** Created a Python script to report system information, memory usage, and disk usage. Validated the script and configured Git to ignore Python cache files
+- **Day 7 — Python Conditionals and Functions:** Practiced conditionals, loops, and functions in Python. Added RAM and disk usage level classification (normal, WARNING, CRITICAL) to the Python system report
 
 ## Documentation
 

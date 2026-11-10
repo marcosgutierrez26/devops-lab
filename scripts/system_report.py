@@ -6,6 +6,14 @@ import platform
 import shutil
 from datetime import datetime
 
+def clasificar(uso):
+    if uso >= 90:
+        return "CRITICAL"
+    elif uso >= 80:
+        return "WARNING"
+    else:
+        return "normal"
+
 def main():
     print("=" * 45)
     print("             SYSTEM REPORT")
@@ -34,16 +42,17 @@ def main():
 
     print(f"Total RAM: {total_memory / 1024:.2f} MB")
     print(f"Used RAM: {used_memory / 1024:.2f} MB")
-    print(f"RAM usage: {memory_percent:.1f}%")
+    print(f"RAM usage: {memory_percent:.1f}% ({clasificar(memory_percent)})")
 
     print("\nDisk Usage (/):")
 
     total, used, free = shutil.disk_usage("/")
+    disk_percent = used / total * 100
 
     print(f"Total disk: {total / (1024 ** 3):.2f} GB")
     print(f"Used disk: {used / (1024 ** 3):.2f} GB")
     print(f"Free disk: {free / (1024 ** 3):.2f} GB")
-    print(f"Disk usage: {used / total * 100:.1f}%")
+    print(f"Disk usage: {disk_percent:.1f}% ({clasificar(disk_percent)})")
 
 if __name__ == "__main__":
     main()
