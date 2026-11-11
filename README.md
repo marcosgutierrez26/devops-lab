@@ -82,6 +82,7 @@ The project is currently focused on Linux fundamentals and Bash/Python scripting
 - **Day 5 — Process and Resource Monitoring:** Practiced Linux process management and resource monitoring commands. Created a Bash script to report system uptime, memory usage, and the top five CPU-consuming processes. Documented all three scripts in `docs/scripts.md` and improved the project README
 - **Day 6 — Python System Monitoring:** Created a Python script to report system information, memory usage, and disk usage. Validated the script and configured Git to ignore Python cache files
 - **Day 7 — Python Conditionals and Functions:** Practiced conditionals, loops, and functions in Python. Added RAM and disk usage level classification (normal, WARNING, CRITICAL) to the Python system report
+- **Day 8 — Python Lists and Dictionaries:** Practiced lists and dictionaries and reviewed how the system report parses `/proc/meminfo` into a dictionary. Learned why `MemAvailable` is a better measure of usable RAM than `MemFree`
 
 ## Documentation
 
