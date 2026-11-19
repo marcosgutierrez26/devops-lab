@@ -28,21 +28,28 @@ This repository documents my practical journey into DevOps, starting with Linux 
 
 ## Technologies
 
-**Current focus:** Linux, Bash, networking, and Git
+**Current focus:** Linux, Bash, Python, Flask, Git, and Docker
 
-**Planned learning path:** Python, Docker, CI/CD, Ansible, Terraform, cloud platforms, Kubernetes, monitoring, and logging
+**Planned learning path:** Docker Compose, CI/CD, Ansible, Terraform, cloud platforms, Kubernetes, monitoring, and logging
 
 ## Repository Structure
 
     devops-lab/
     ├── README.md
+    ├── app/
+    │   ├── .dockerignore
+    │   ├── Dockerfile
+    │   ├── app.py
+    │   └── requirements.txt
     ├── docs/
+    │   ├── docker.md
     │   ├── entorno.md
     │   └── scripts.md
     └── scripts/
         ├── system-info.sh
         ├── filesystem-explorer.sh
-        └── resource-report.sh
+        ├── resource-report.sh
+        └── system_report.py
 
 ## Scripts
 
@@ -83,6 +90,7 @@ The project is currently focused on Linux fundamentals and Bash/Python scripting
 - **Day 6 — Python System Monitoring:** Created a Python script to report system information, memory usage, and disk usage. Validated the script and configured Git to ignore Python cache files
 - **Day 7 — Python Conditionals and Functions:** Practiced conditionals, loops, and functions in Python. Added RAM and disk usage level classification (normal, WARNING, CRITICAL) to the Python system report
 - **Day 8 — Python Lists and Dictionaries:** Practiced lists and dictionaries and reviewed how the system report parses `/proc/meminfo` into a dictionary. Learned why `MemAvailable` is a better measure of usable RAM than `MemFree`
+- **Day 9 — Docker and Flask API:** Installed Docker and practiced images, containers, port publishing, and bind mounts. Built a Flask API with `/` and `/disk` endpoints, switched GitHub authentication to SSH keys, and containerized the API with a Dockerfile. Documented the process in `docs/docker.md`
 
 ## Documentation
 
