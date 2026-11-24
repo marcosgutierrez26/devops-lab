@@ -85,6 +85,7 @@ For usage instructions and syntax validation, see the [Scripts Documentation](do
 - **Day 8 — Python Lists and Dictionaries:** Parsed `/proc/meminfo` into a dictionary and learned why `MemAvailable` beats `MemFree`
 - **Day 9 — Docker and Flask API:** Built a Flask API with `/` and `/disk` endpoints, switched GitHub authentication to SSH keys, and containerized the API
 - **Day 10 — DevSecOps Refocus:** Renamed the repository to `devsecops-lab` and redefined the roadmap around security at every layer
+- **Day 11 — SSH Hardening:** Ran a Lynis baseline audit (hardening index 58) and enforced key-only SSH authentication with `config/ssh/01-hardening.conf`, documented in `docs/hardening.md`.
 
 ## Documentation
 
