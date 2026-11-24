@@ -1,18 +1,17 @@
-# DevOps Lab
+# DevSecOps Lab
 
-**A hands-on laboratory to learn, build, automate, and document DevOps practices.**
+**A hands-on lab to build, secure, and automate infrastructure: from a hardened Linux server to a security-scanned CI/CD pipeline and Terraform on AWS.**
 
-This repository documents my practical journey into DevOps, starting with Linux administration and Bash scripting and progressing towards containers, CI/CD, Infrastructure as Code, cloud platforms, and Kubernetes
+This repository documents my practical journey into DevSecOps. It started with Linux administration and scripting and now applies security at every layer: the server, the code, the container, the pipeline, and the cloud infrastructure.
 
 ## Project Goals
 
-- Strengthen Linux administration and networking fundamentals
-- Automate repetitive tasks with Bash and Python
-- Build and manage containerized applications with Docker
-- Implement CI/CD pipelines
-- Practice Infrastructure as Code using Terraform
-- Automate configuration management with Ansible
-- Deploy and manage workloads with Kubernetes
+- Harden and audit Linux servers
+- Automate administration and security checks with Bash and Python
+- Build secure, minimal container images
+- Implement CI/CD pipelines with automated security scanning
+- Provision AWS infrastructure with Terraform and scan it as code
+- Apply least privilege and secure secrets management
 - Learn monitoring, logging, and troubleshooting
 
 ## Infrastructure
@@ -23,18 +22,18 @@ This repository documents my practical journey into DevOps, starting with Linux 
 | Hypervisor | VMware |
 | Server OS | Ubuntu Server |
 | Network Mode | NAT |
-| Remote Access | SSH |
+| Remote Access | SSH (key-based) |
 | Version Control | Git and GitHub |
 
 ## Technologies
 
 **Current focus:** Linux, Bash, Python, Flask, Git, and Docker
 
-**Planned learning path:** Docker Compose, CI/CD, Ansible, Terraform, cloud platforms, Kubernetes, monitoring, and logging
+**Planned:** Linux hardening (ufw, fail2ban, Lynis), pytest, Bandit, hadolint, Trivy, GitHub Actions, Gitleaks, pip-audit, Terraform, Checkov, AWS, and Kubernetes
 
 ## Repository Structure
 
-    devops-lab/
+    devsecops-lab/
     ├── README.md
     ├── app/
     │   ├── .dockerignore
@@ -60,43 +59,39 @@ This repository documents my practical journey into DevOps, starting with Linux 
 | `resource-report.sh` | Reports system uptime, memory usage, and top CPU-consuming processes |
 | `system_report.py` | Reports system information, RAM usage, and disk usage using Python |
 
-For detailed descriptions, usage instructions, and syntax validation, see the [Scripts Documentation](docs/scripts.md)
+For usage instructions and syntax validation, see the [Scripts Documentation](docs/scripts.md).
 
-For detailed descriptions, usage instructions, and syntax validation, see the [Scripts Documentation](docs/scripts.md)
+## DevSecOps Roadmap
 
-## Learning Roadmap
+- [x] Ubuntu Server lab environment with SSH and GitHub
+- [x] Bash and Python scripting for system monitoring
+- [x] Docker fundamentals and a containerized Flask API
+- [ ] **Phase 1 — Linux hardening:** SSH, firewall, fail2ban, automatic updates, Lynis audit
+- [ ] **Phase 2 — Application security:** tests with pytest and static analysis with Bandit
+- [ ] **Phase 3 — Secure containers:** non-root multi-stage image, hadolint, Trivy
+- [ ] **Phase 4 — CI/CD security gates:** GitHub Actions with Gitleaks, Bandit, pip-audit, and Trivy
+- [ ] **Phase 5 — Secure IaC on AWS:** Terraform, Checkov, OIDC, and Secrets Manager
+- [ ] **Phase 6 — Kubernetes security and monitoring**
 
-- [x] Set up the Ubuntu Server lab environment
-- [x] Configure SSH access and connect the repository to GitHub
-- [x] Create Bash scripts for system information and filesystem exploration
-- [x] Create a resource report for monitoring processes and memory
-- [ ] Strengthen Linux and networking fundamentals
-- [ ] Develop Python automation scripts
-- [ ] Containerize applications with Docker
-- [ ] Build CI/CD pipelines
-- [ ] Automate infrastructure and configuration
-- [ ] Explore cloud platforms and Kubernetes
-- [ ] Implement monitoring and logging
-
-## Current Status
-
-The project is currently focused on Linux fundamentals and Bash/Python scripting
+## Progress Log
 
 - **Day 1 — Environment Setup:** Configured Ubuntu Server in VMware and connected the repository to GitHub
 - **Day 2 — System Information Script:** Created a Bash script to report basic system information
 - **Day 3 — Disk Usage Monitoring:** Added a warning when root filesystem usage reaches 80%
-- **Day 4 — Linux Commands and Bash Automation:** Practiced filesystem commands and built a Bash script to explore directories and count files and folders
-- **Day 5 — Process and Resource Monitoring:** Practiced Linux process management and resource monitoring commands. Created a Bash script to report system uptime, memory usage, and the top five CPU-consuming processes. Documented all three scripts in `docs/scripts.md` and improved the project README
-- **Day 6 — Python System Monitoring:** Created a Python script to report system information, memory usage, and disk usage. Validated the script and configured Git to ignore Python cache files
-- **Day 7 — Python Conditionals and Functions:** Practiced conditionals, loops, and functions in Python. Added RAM and disk usage level classification (normal, WARNING, CRITICAL) to the Python system report
-- **Day 8 — Python Lists and Dictionaries:** Practiced lists and dictionaries and reviewed how the system report parses `/proc/meminfo` into a dictionary. Learned why `MemAvailable` is a better measure of usable RAM than `MemFree`
-- **Day 9 — Docker and Flask API:** Installed Docker and practiced images, containers, port publishing, and bind mounts. Built a Flask API with `/` and `/disk` endpoints, switched GitHub authentication to SSH keys, and containerized the API with a Dockerfile. Documented the process in `docs/docker.md`
+- **Day 4 — Linux Commands and Bash Automation:** Built a Bash script to explore directories and count files and folders
+- **Day 5 — Process and Resource Monitoring:** Created a Bash script to report uptime, memory usage, and the top five CPU-consuming processes
+- **Day 6 — Python System Monitoring:** Created a Python script to report system information, memory usage, and disk usage
+- **Day 7 — Python Conditionals and Functions:** Added RAM and disk usage level classification (normal, WARNING, CRITICAL)
+- **Day 8 — Python Lists and Dictionaries:** Parsed `/proc/meminfo` into a dictionary and learned why `MemAvailable` beats `MemFree`
+- **Day 9 — Docker and Flask API:** Built a Flask API with `/` and `/disk` endpoints, switched GitHub authentication to SSH keys, and containerized the API
+- **Day 10 — DevSecOps Refocus:** Renamed the repository to `devsecops-lab` and redefined the roadmap around security at every layer
 
 ## Documentation
 
 - [Lab Environment](docs/entorno.md)
 - [Scripts Documentation](docs/scripts.md)
+- [Docker Notes](docs/docker.md)
 
 ---
 
-*This repository is an ongoing practical learning project focused on building real-world DevOps skills through hands-on implementation and documentation*
+*An ongoing hands-on project to build real-world DevSecOps skills through implementation and documentation.*
