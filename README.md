@@ -27,11 +27,11 @@ This repository documents my practical journey into DevSecOps. It started with L
 
 ## Technologies
 
-**Current focus:** Linux, Bash, Python, Flask, Git, and Docker
+**Current focus:** Linux, Bash, Python, Flask, Git, Docker, and Linux hardening (SSH, ufw, Lynis)
 
-**Planned:** Linux hardening (ufw, fail2ban, Lynis), pytest, Bandit, hadolint, Trivy, GitHub Actions, Gitleaks, pip-audit, Terraform, Checkov, AWS, and Kubernetes
+**Planned:** fail2ban, pytest, Bandit, hadolint, Trivy, GitHub Actions, Gitleaks, pip-audit, Terraform, Checkov, AWS, and Kubernetes
 
-## Repository Structure
+##Repository Structure
 
     devsecops-lab/
     ├── README.md
@@ -40,9 +40,13 @@ This repository documents my practical journey into DevSecOps. It started with L
     │   ├── Dockerfile
     │   ├── app.py
     │   └── requirements.txt
+    ├── config/
+    │   └── ssh/
+    │       └── 01-hardening.conf
     ├── docs/
     │   ├── docker.md
     │   ├── entorno.md
+    │   ├── hardening.md
     │   └── scripts.md
     └── scripts/
         ├── system-info.sh
@@ -85,13 +89,15 @@ For usage instructions and syntax validation, see the [Scripts Documentation](do
 - **Day 8 — Python Lists and Dictionaries:** Parsed `/proc/meminfo` into a dictionary and learned why `MemAvailable` beats `MemFree`
 - **Day 9 — Docker and Flask API:** Built a Flask API with `/` and `/disk` endpoints, switched GitHub authentication to SSH keys, and containerized the API
 - **Day 10 — DevSecOps Refocus:** Renamed the repository to `devsecops-lab` and redefined the roadmap around security at every layer
-- **Day 11 — SSH Hardening:** Ran a Lynis baseline audit (hardening index 58) and enforced key-only SSH authentication with `config/ssh/01-hardening.conf`, documented in `docs/hardening.md`.
+- **Day 11 — SSH Hardening:** Ran a Lynis baseline audit (hardening index 58) and enforced key-only SSH authentication with `config/ssh/01-hardening.conf`, documented in `docs/hardening.md`
+- **Day 12 — Firewall with ufw:** Enabled ufw with default deny incoming and only SSH allowed (Lynis 61 → 65), and proved that Docker-published ports bypass ufw (fixed by binding to `127.0.0.1`), documented in `docs/hardening.md`
 
 ## Documentation
 
 - [Lab Environment](docs/entorno.md)
 - [Scripts Documentation](docs/scripts.md)
 - [Docker Notes](docs/docker.md)
+- [Linux Hardening](docs/hardening.md)
 
 ---
 
