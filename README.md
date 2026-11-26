@@ -31,7 +31,7 @@ This repository documents my practical journey into DevSecOps. It started with L
 
 **Planned:** fail2ban, pytest, Bandit, hadolint, Trivy, GitHub Actions, Gitleaks, pip-audit, Terraform, Checkov, AWS, and Kubernetes
 
-##Repository Structure
+## Repository Structure
 
     devsecops-lab/
     ├── README.md
@@ -91,6 +91,7 @@ For usage instructions and syntax validation, see the [Scripts Documentation](do
 - **Day 10 — DevSecOps Refocus:** Renamed the repository to `devsecops-lab` and redefined the roadmap around security at every layer
 - **Day 11 — SSH Hardening:** Ran a Lynis baseline audit (hardening index 58) and enforced key-only SSH authentication with `config/ssh/01-hardening.conf`, documented in `docs/hardening.md`
 - **Day 12 — Firewall with ufw:** Enabled ufw with default deny incoming and only SSH allowed (Lynis 61 → 65), and proved that Docker-published ports bypass ufw (fixed by binding to `127.0.0.1`), documented in `docs/hardening.md`
+- **Day 13 — Brute-force Protection with fail2ban:** Tightened the `sshd` jail (3 failures in 10 minutes, 1-hour ban), tested it by banning my own host and unbanning it from the console (Lynis 65 → 68)
 
 ## Documentation
 
