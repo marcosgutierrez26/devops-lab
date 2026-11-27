@@ -27,9 +27,9 @@ This repository documents my practical journey into DevSecOps. It started with L
 
 ## Technologies
 
-**Current focus:** Linux, Bash, Python, Flask, Git, Docker, and Linux hardening (SSH, ufw, Lynis)
+**Current focus:** Linux, Bash, Python, Flask, Git, Docker, and Linux hardening (SSH, ufw, fail2ban, unattended-upgrades, Lynis)
 
-**Planned:** fail2ban, pytest, Bandit, hadolint, Trivy, GitHub Actions, Gitleaks, pip-audit, Terraform, Checkov, AWS, and Kubernetes
+**Planned:** pytest, Bandit, hadolint, Trivy, GitHub Actions, Gitleaks, pip-audit, Terraform, Checkov, AWS, and Kubernetes
 
 ## Repository Structure
 
@@ -41,6 +41,8 @@ This repository documents my practical journey into DevSecOps. It started with L
     │   ├── app.py
     │   └── requirements.txt
     ├── config/
+    │   ├── fail2ban/
+    │   │   └── sshd.local
     │   └── ssh/
     │       └── 01-hardening.conf
     ├── docs/
@@ -52,6 +54,7 @@ This repository documents my practical journey into DevSecOps. It started with L
         ├── system-info.sh
         ├── filesystem-explorer.sh
         ├── resource-report.sh
+        ├── security-check.sh
         └── system_report.py
 
 ## Scripts
@@ -62,6 +65,7 @@ This repository documents my practical journey into DevSecOps. It started with L
 | `filesystem-explorer.sh` | Explores directory contents and counts files and directories |
 | `resource-report.sh` | Reports system uptime, memory usage, and top CPU-consuming processes |
 | `system_report.py` | Reports system information, RAM usage, and disk usage using Python |
+| `security-check.sh` | Verifies SSH, firewall, fail2ban, and security updates, and exits with the number of failed checks |
 
 For usage instructions and syntax validation, see the [Scripts Documentation](docs/scripts.md).
 
@@ -92,6 +96,10 @@ For usage instructions and syntax validation, see the [Scripts Documentation](do
 - **Day 11 — SSH Hardening:** Ran a Lynis baseline audit (hardening index 58) and enforced key-only SSH authentication with `config/ssh/01-hardening.conf`, documented in `docs/hardening.md`
 - **Day 12 — Firewall with ufw:** Enabled ufw with default deny incoming and only SSH allowed (Lynis 61 → 65), and proved that Docker-published ports bypass ufw (fixed by binding to `127.0.0.1`), documented in `docs/hardening.md`
 - **Day 13 — Brute-force Protection with fail2ban:** Tightened the `sshd` jail (3 failures in 10 minutes, 1-hour ban), tested it by banning my own host and unbanning it from the console (Lynis 65 → 68)
+- **Day 14 — Automatic Security Updates:** Verified that unattended-upgrades was already patching the server daily (18 → 0 pending security updates) and that the running kernel is the latest installed, documented in `docs/hardening.md`
+- **Day 15\* — Security Check Script:** Created `scripts/security-check.sh` to verify the Phase 1 hardening, exiting with the number of failed checks (tested by disabling ufw)
+
+\* Completed on the same date as the previous day.
 
 ## Documentation
 

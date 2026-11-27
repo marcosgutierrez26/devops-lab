@@ -96,7 +96,7 @@ Check the Bash syntax without executing the script:
 
 ## General Notes
 
-- All scripts are written in Bash.
+- The Bash scripts can be validated with `bash -n`; `system_report.py` is written in Python.
 - Scripts should be executed from the root directory of the repository using their relative paths.
 - The `bash -n` command checks syntax without executing the script.
 - These scripts support practical learning in Linux administration, system information gathering, filesystem exploration, resource monitoring, and automation.
@@ -136,3 +136,34 @@ Check the Python syntax without executing the script:
 ### Dependencies
 
 The script uses Python's standard library and Linux system information. No external Python packages are required.
+
+## 5. Security Check
+
+**File:** `scripts/security-check.sh`
+
+### Purpose
+
+Verifies the Phase 1 hardening of the server in a single run.
+
+### Features
+
+- Checks that SSH password and root logins are disabled.
+- Checks that ufw is active and fail2ban is running.
+- Checks for pending security updates and required reboots.
+- Prints `[OK]` or `[FAIL]` for each check.
+- Exits with the number of failed checks (`0` = all passed), so it can be used in automation.
+
+### Usage
+
+Run the script with sudo from the root directory of the repository:
+
+    sudo ./scripts/security-check.sh
+    echo $?
+
+### Validation
+
+Check the Bash syntax without executing the script:
+
+    bash -n scripts/security-check.sh
+
+Tested by disabling ufw: the script reported `[FAIL] ufw inactive` and exited with `1`.
