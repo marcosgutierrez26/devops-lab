@@ -98,6 +98,26 @@ Added [`config/fail2ban/sshd.local`](../config/fail2ban/sshd.local) to `/etc/fai
    (`192.168.78.1`); further connections timed out. Unbanned from the VM console with
    `fail2ban-client set sshd unbanip`.
 
+## Automatic security updates (unattended-upgrades)
+
+### Findings
+- Day 11 showed 18 pending security updates (Lynis PKGS-7392).
+- unattended-upgrades was already installed and enabled by default: both values in
+  `/etc/apt/apt.conf.d/20auto-upgrades` are `"1"`.
+- Its log (`/var/log/unattended-upgrades/unattended-upgrades.log`) showed daily runs since
+  Nov 24, patching the kernel, Kerberos, libexpat and binutils, among others.
+
+### Verification
+1. `apt list --upgradable | grep -i security | wc -l`: 9 pending, then 0 after the daily run.
+2. `sudo unattended-upgrade --dry-run -v`: only official Ubuntu security origins are allowed;
+   nothing left to upgrade.
+3. `uname -r` is `7.0.0-44-generic`, the newest kernel in `/boot`, and there is no
+   `/var/run/reboot-required`.
+
+### Decision
+Automatic reboot stays disabled because the VM is usually off at night.
+`scripts/security-check.sh` reports when a reboot is required.
+
 ## Results
 
 | Stage | Hardening index |
