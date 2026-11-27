@@ -98,6 +98,7 @@ For usage instructions and syntax validation, see the [Scripts Documentation](do
 - **Day 13 — Brute-force Protection with fail2ban:** Tightened the `sshd` jail (3 failures in 10 minutes, 1-hour ban), tested it by banning my own host and unbanning it from the console (Lynis 65 → 68)
 - **Day 14 — Automatic Security Updates:** Verified that unattended-upgrades was already patching the server daily (18 → 0 pending security updates) and that the running kernel is the latest installed, documented in `docs/hardening.md`
 - **Day 15\* — Security Check Script and Phase 1 Audit:** Created `scripts/security-check.sh` to verify the Phase 1 hardening, exiting with the number of failed checks (tested by disabling ufw), and ran the final Lynis audit: 58 → 68 and 1 → 0 warnings
+- **Day 16\* — Unit Tests with pytest:** Added 3 pytest tests for the Flask API and `clasificar()`, and proved they catch a boundary bug (`>= 80` changed to `> 80`), documented in `docs/testing.md`
 
 \* Completed on the same date as the previous day.
 
