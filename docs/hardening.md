@@ -126,4 +126,4 @@ Automatic reboot stays disabled because the VM is usually off at night.
 | After SSH hardening | 61 |
 | After firewall (ufw) | 65 |
 | After brute-force protection (fail2ban) | 68 |
-| After Phase 1 | pending |
+| After Phase 1 (unattended-upgrades, 0 warnings) | 68 |

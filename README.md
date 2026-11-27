@@ -74,7 +74,7 @@ For usage instructions and syntax validation, see the [Scripts Documentation](do
 - [x] Ubuntu Server lab environment with SSH and GitHub
 - [x] Bash and Python scripting for system monitoring
 - [x] Docker fundamentals and a containerized Flask API
-- [ ] **Phase 1 — Linux hardening:** SSH, firewall, fail2ban, automatic updates, Lynis audit
+- [x] **Phase 1 — Linux hardening:** SSH, firewall, fail2ban, automatic updates, Lynis audit
 - [ ] **Phase 2 — Application security:** tests with pytest and static analysis with Bandit
 - [ ] **Phase 3 — Secure containers:** non-root multi-stage image, hadolint, Trivy
 - [ ] **Phase 4 — CI/CD security gates:** GitHub Actions with Gitleaks, Bandit, pip-audit, and Trivy
@@ -97,7 +97,7 @@ For usage instructions and syntax validation, see the [Scripts Documentation](do
 - **Day 12 — Firewall with ufw:** Enabled ufw with default deny incoming and only SSH allowed (Lynis 61 → 65), and proved that Docker-published ports bypass ufw (fixed by binding to `127.0.0.1`), documented in `docs/hardening.md`
 - **Day 13 — Brute-force Protection with fail2ban:** Tightened the `sshd` jail (3 failures in 10 minutes, 1-hour ban), tested it by banning my own host and unbanning it from the console (Lynis 65 → 68)
 - **Day 14 — Automatic Security Updates:** Verified that unattended-upgrades was already patching the server daily (18 → 0 pending security updates) and that the running kernel is the latest installed, documented in `docs/hardening.md`
-- **Day 15\* — Security Check Script:** Created `scripts/security-check.sh` to verify the Phase 1 hardening, exiting with the number of failed checks (tested by disabling ufw)
+- **Day 15\* — Security Check Script and Phase 1 Audit:** Created `scripts/security-check.sh` to verify the Phase 1 hardening, exiting with the number of failed checks (tested by disabling ufw), and ran the final Lynis audit: 58 → 68 and 1 → 0 warnings
 
 \* Completed on the same date as the previous day.
 
