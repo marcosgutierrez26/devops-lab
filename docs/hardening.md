@@ -45,6 +45,37 @@ file is named `01-` to be read first.
 
 ## Firewall (ufw)
 
+### Findings
+- ufw was installed but **inactive**: no host firewall filtering incoming traffic.
+- Lynis reported a "host based firewall" as active, but it was only detecting Docker's own rules.
+- `ss -tulpn` showed SSH (22) as the only service listening on all interfaces.
+
+### Changes
+    sudo ufw default deny incoming
+    sudo ufw default allow outgoing
+    sudo ufw allow 22/tcp
+    sudo ufw enable
+
+The SSH rule was added **before** enabling ufw to avoid locking myself out.
+
+### Gotcha: Docker bypasses ufw
+Publishing a port with `docker run -p 5000:5000` made the Flask API reachable from the
+host machine even though ufw denies all incoming traffic except SSH.
+
+Docker rewrites the destination in `PREROUTING` (DNAT) and the packet goes through the
+`FORWARD` chain, where Docker's rules are evaluated before ufw. ufw's rules live in `INPUT`,
+so they never see that traffic.
+
+**Fix used:** bind published ports to localhost when they don't need to be public:
+
+    docker run -p 127.0.0.1:5000:5000 devops-api
+
+### Verification
+1. `sudo ufw status verbose`: active, default deny incoming, only 22/tcp allowed.
+2. SSH from the Windows host still works.
+3. With `-p 5000:5000` the API was reachable from Windows; with `-p 127.0.0.1:5000:5000`
+   the connection timed out (dropped by ufw), while `curl` from the VM still worked.
+
 ## Brute-force protection (fail2ban)
 
 ### Findings
@@ -67,12 +98,12 @@ Added [`config/fail2ban/sshd.local`](../config/fail2ban/sshd.local) to `/etc/fai
    (`192.168.78.1`); further connections timed out. Unbanned from the VM console with
    `fail2ban-client set sshd unbanip`.
 
-##Results
+## Results
 
 | Stage | Hardening index |
 |---|---|
 | Baseline | 58 |
 | After SSH hardening | 61 |
 | After firewall (ufw) | 65 |
-| After Phase 1 | pending |
 | After brute-force protection (fail2ban) | 68 |
+| After Phase 1 | pending |
